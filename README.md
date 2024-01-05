@@ -1,9 +1,17 @@
 # Catalog Service
 This project aims to facilitate learning about the proper construction of cloud-native applications using __Spring framework__.
 
-The application solely features a REST endpoint, with a GET request on the "/" path, which returns a straightforward __hello world__ message.
-
 The goal of the application is to practice Docker containerization and employ Kubernetes(K8s) to execute the container within a pod.
+
+### Package the application
+
+Package the application as a JAR file:
+
+`./gradlew bootJar`
+
+Run the JAR: 
+
+`java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar`
 
 ### Run the application
 The application can be run either using the IDE or with a gradle command:
@@ -38,3 +46,13 @@ Expose Catalog Service to the cluster through a Service resource by running the 
 Then you can forward the traffic from a local port of your computer to the port exposed by the Service:
 
 `kubectl port-forward service/catalog-service 8000:8080`
+
+### Vulnerability scanner
+
+The vulnerability scanner used is [grype](https://github.com/anchore/grype)
+
+Grype is an open source tool that can be used to scan your Java codebase for vulnerabilities
+
+`./gradlew build`
+
+`grype .` 
