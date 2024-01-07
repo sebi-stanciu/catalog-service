@@ -56,3 +56,16 @@ Grype is an open source tool that can be used to scan your Java codebase for vul
 `./gradlew build`
 
 `grype .` 
+
+### Define active profiles
+
+Example for testdata profile, add following code to build.gradle
+
+
+`bootRun {
+systemProperty 'spring.profiles.active', 'testdata'
+}`
+
+Then run the app:
+
+`./gradlew bootRun`
