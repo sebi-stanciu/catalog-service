@@ -24,10 +24,8 @@ class BookControllerMvcTests {
     @Test
     void whenGetBookNotExistingThenShouldReturn404() throws Exception {
         String isbn = "73737313940";
-        given(bookService.getBook(isbn))
-                .willThrow(BookNotFoundException.class);
-        mockMvc
-                .perform(get("/books/" + isbn))
+        given(bookService.getBook(isbn)).willThrow(BookNotFoundException.class);
+        mockMvc.perform(get("/books/" + isbn))
       .andExpect(status().isNotFound());
     }
 
