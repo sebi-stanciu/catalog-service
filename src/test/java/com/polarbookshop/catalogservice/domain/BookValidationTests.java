@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import java.util.Set;
 
 class BookValidationTests {
@@ -15,9 +16,8 @@ class BookValidationTests {
 
     @BeforeAll
     static void setUp() {
-        try (ValidatorFactory factory = Validation.buildDefaultValidatorFactory()) {
-            validator = factory.getValidator();
-        }
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
     }
 
     @Test
@@ -29,7 +29,7 @@ class BookValidationTests {
 
     @Test
     void whenIsbnEmptyThenValidationFails() {
-        var book = new Book(1L,"", "Title", "Author", 9.90, 1);
+        var book = new Book(1L, "", "Title", "Author", 9.90, null, null, 1);
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
         assertThat(violations).hasSize(1);
         assertThat(violations.iterator().next().getMessage())
