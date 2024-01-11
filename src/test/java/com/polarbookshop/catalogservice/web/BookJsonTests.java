@@ -37,8 +37,8 @@ class BookJsonTests {
                   "title": "Title",
                   "author": "Author",
                   "price": 9.90,
-                  "created_date": null
-                  "last_modified_date": null
+                  "created_date": null,
+                  "last_modified_date": null,
                   "version": 1
                 }
                 """;
