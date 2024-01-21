@@ -84,4 +84,6 @@ postgres:14.4
 
 `kubectl apply -f k8s/deployment.yml`
 
+### Create a service object from a manifest
 
+`kubectl apply -f k8s/service.yml`
