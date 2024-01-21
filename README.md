@@ -79,3 +79,9 @@ docker run -d \
 -e POSTGRES_DB=polardb_catalog \
 -p 5432:5432 \
 postgres:14.4
+
+### Create a deployment object from a manifest
+
+`kubectl apply -f k8s/deployment.yml`
+
+
