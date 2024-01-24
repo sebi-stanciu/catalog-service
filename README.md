@@ -87,3 +87,15 @@ postgres:14.4
 ### Create a service object from a manifest
 
 `kubectl apply -f k8s/service.yml`
+
+### Run tilt
+
+Run command in root folder:
+
+`titl up`
+
+Go to the URL where Tilt started its services and monitor the process that Tilt follows to build and deploy Catalog Service
+
+by default: http://localhost:10350/
+
+
